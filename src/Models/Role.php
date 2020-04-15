@@ -5,6 +5,7 @@ namespace Spatie\Permission\Models;
 use Spatie\Permission\Guard;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Traits\HasPermissions;
+use Spatie\Permission\Traits\HasRoleInheritance;
 use Spatie\Permission\Exceptions\RoleDoesNotExist;
 use Spatie\Permission\Exceptions\GuardDoesNotMatch;
 use Spatie\Permission\Exceptions\RoleAlreadyExists;
@@ -16,6 +17,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Role extends Model implements RoleContract
 {
     use HasPermissions;
+    use HasRoleInheritance;
     use RefreshesPermissionCache;
 
     protected $guarded = ['id'];
