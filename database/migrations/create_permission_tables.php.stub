@@ -32,7 +32,7 @@ class CreatePermissionTables extends Migration
             $table->string('name');
             $table->string('guard_name');
             $table->boolean('inherit_all');
-            $table->text('inherit_roles');
+            $table->multiLineString('inherit_roles');
             $table->timestamps();
         });
 
