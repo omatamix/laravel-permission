@@ -31,8 +31,8 @@ class CreatePermissionTables extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('guard_name');
-            $table->boolean('inherit_all');
-            $table->multiLineString('inherit_roles');
+            $table->boolean('inherit_all')->default(false);
+            $table->json('inherit_roles')->nullable();
             $table->timestamps();
         });
 
