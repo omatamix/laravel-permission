@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Role extends Model implements RoleContract
 {
+    use HasRoleInheritance;
     use HasPermissions;
     use RefreshesPermissionCache;
 
